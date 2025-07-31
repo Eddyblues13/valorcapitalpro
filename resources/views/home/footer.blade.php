@@ -58,7 +58,7 @@
             Varible2: ["USA","UAE","ITALY", "FLORIDA", "MEXICO", "INDIA", "CHINA", "CAMBODIA", "UNITED KINGDOM", "GERMANY", "AUSTRALIA", "BANGLADESH", "SWEDEN", "PAKISTAN", "MALDIVES", "SEYCHELLES", 
             "BOLIVIA", "SOUTH AFRICA", "ZAMBIA", "ZIMBABWE", "LEBANESE", "SAUDI ARABIA", "CHILE", "PEUTO RICO"],
             
-            Amount: [9000, 2500,5000,6669,4440,7989,7052],          
+            Amount: [900620, 250620,500620,662669,446240,796289,706252],          
             Content: '[Varible1] from [Varible2] has just Earned <b>$[Amount]</b>',
             // Timer
             Show: ['stable', 5, 10],
