@@ -26,7 +26,7 @@
     <!-- Smartsupp Live Chat script -->
     <script type="text/javascript">
         var _smartsupp = _smartsupp || {};
-_smartsupp.key = '907279d3e1f7b31de6faf1c3c2bb727ec043dc74';
+_smartsupp.key = '6cad4f45ec2dc44e805e6f15b64aff82bb39d26b';
 window.smartsupp||(function(d) {
   var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
   s=d.getElementsByTagName('script')[0];c=d.createElement('script');
