@@ -29,7 +29,7 @@
                     <option value="referral">Referral Balance ({{ config('currencies.' . Auth::user()->currency, '$')
                         }}{{ number_format($referralBalance, 2) }})</option>
                     <option value="deposit">Deposit Balance ({{ config('currencies.' . Auth::user()->currency, '$') }}{{
-                        number_format($depositBalance, 2) }})</option>
+                        number_format($tradingBalance, 2) }})</option>
                     <option value="profit">Profit Balance ({{ config('currencies.' . Auth::user()->currency, '$') }}{{
                         number_format($profit, 2) }})</option>
                 </select>

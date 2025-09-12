@@ -206,6 +206,40 @@ class WithdrawalController extends Controller
             ->sum('amount') ?? 0;
         $data['profit'] = Profit::where('user_id', $user->id)->sum('amount') ?? 0;
 
+
+
+        switch ($accountType) {
+            case 'holding':
+                if ($amount > $holdingBalance) {
+                    return response()->json(['message' => 'Insufficient balance in Holding Account.'], 400);
+                }
+                break;
+            case 'staking':
+                if ($amount > $stakingBalance) {
+                    return response()->json(['message' => 'Insufficient balance in Staking Account.'], 400);
+                }
+                break;
+            case 'trading':
+                if ($amount > $tradingBalance) {
+                    return response()->json(['message' => 'Insufficient balance in Trading Account.'], 400);
+                }
+            case 'referral':
+                if ($amount > $tradingBalance) {
+                    return response()->json(['message' => 'Insufficient balance in Referral Account.'], 400);
+                }
+            case 'profit':
+                if ($amount > $tradingBalance) {
+                    return response()->json(['message' => 'Insufficient balance in Profit Account.'], 400);
+                }
+            case 'deposit':
+                if ($amount > $tradingBalance) {
+                    return response()->json(['message' => 'Insufficient balance in Trading Account.'], 400);
+                }
+                break;
+            default:
+                return response()->json(['message' => 'Invalid account selected.'], 400);
+        }
+
         // Start a database transaction
         DB::beginTransaction();
 
@@ -213,22 +247,22 @@ class WithdrawalController extends Controller
             // Deduct the amount from the selected account
             switch ($accountType) {
                 case 'holding':
-                    HoldingBalance::where('user_id', $user->id)->decrement('amount', $amount);
+                    // HoldingBalance::where('user_id', $user->id)->decrement('amount', $amount);
                     break;
                 case 'staking':
-                    StakingBalance::where('user_id', $user->id)->decrement('amount', $amount);
+                    // StakingBalance::where('user_id', $user->id)->decrement('amount', $amount);
                     break;
                 case 'trading':
-                    TradingBalance::where('user_id', $user->id)->decrement('amount', $amount);
+                    // TradingBalance::where('user_id', $user->id)->decrement('amount', $amount);
                     break;
                 case 'referral':
-                    ReferralBalance::where('user_id', $user->id)->decrement('amount', $amount);
+                    // ReferralBalance::where('user_id', $user->id)->decrement('amount', $amount);
                     break;
                 case 'profit':
-                    Profit::where('user_id', $user->id)->decrement('amount', $amount);
+                    // Profit::where('user_id', $user->id)->decrement('amount', $amount);
                     break;
                 case 'deposit':
-                    Deposit::where('user_id', $user->id)->decrement('amount', $amount);
+                    // Deposit::where('user_id', $user->id)->decrement('amount', $amount);
                     break;
             }
 
