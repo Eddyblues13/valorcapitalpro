@@ -200,6 +200,7 @@ class WithdrawalController extends Controller
         $stakingBalance = StakingBalance::where('user_id', $user->id)->sum('amount') ?? 0;
         $tradingBalance = TradingBalance::where('user_id', $user->id)->sum('amount') ?? 0;
         $referralBalance = ReferralBalance::where('user_id', $user->id)->sum('amount') ?? 0;
+        $profitBalance = Profit::where('user_id', $user->id)->sum('amount') ?? 0;
 
         $data['depositBalance'] = Deposit::where('user_id', $user->id)
             ->where('status', 'approved')
@@ -224,11 +225,11 @@ class WithdrawalController extends Controller
                     return response()->json(['message' => 'Insufficient balance in Trading Account.'], 400);
                 }
             case 'referral':
-                if ($amount > $tradingBalance) {
+                if ($amount > $referralBalance) {
                     return response()->json(['message' => 'Insufficient balance in Referral Account.'], 400);
                 }
             case 'profit':
-                if ($amount > $tradingBalance) {
+                if ($amount > $profitBalance) {
                     return response()->json(['message' => 'Insufficient balance in Profit Account.'], 400);
                 }
             case 'deposit':
