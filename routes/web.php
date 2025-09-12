@@ -338,7 +338,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/trading-plans/create', [App\Http\Controllers\Admin\TradingPlanController::class, 'create'])->name('admin.create-trading-plan');
         Route::post('/trading-plans/store', [App\Http\Controllers\Admin\TradingPlanController::class, 'store'])->name('admin.store-trading-plan');
 
-        Route::post('/add-signal-strength', [App\Http\Controllers\Admin\AdminController::class, 'addSignalStrength'])->name('admin.add_signal_strength');
+        Route::post('/add-signal-strength', [App\Http\Controllers\Admin\AdminController::class, 'addSignalStrength'])->name('admin.add_signal_strength'); 
         Route::get('/user/{id}/trades', [App\Http\Controllers\Admin\TradeController::class, 'index'])->name('admin.user.trades');
         Route::post('/trades', [App\Http\Controllers\Admin\TradeController::class, 'store'])->name('admin.trades.store');
         Route::put('/trades/{trade}', [App\Http\Controllers\Admin\TradeController::class, 'update'])->name('admin.trades.update');
