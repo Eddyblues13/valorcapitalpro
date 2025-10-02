@@ -99,7 +99,8 @@ class RegisterController extends Controller
             'currency' => 'required|string|max:10|in:USD,EUR,GBP,JPY',
             'country' => 'required|string|max:100',
             'city' => 'required|string|max:100',
-            'password' => 'required|string|min:8|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+            'password' => 'required|string|min:4|confirmed|',
+            // 'password' => 'required|string|min:8|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
             'referral_code' => 'nullable|string|exists:users,referral_code',
         ], [
             'password.regex' => 'Password must contain at least one uppercase letter, one lowercase letter and one number.'
