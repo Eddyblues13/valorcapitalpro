@@ -3,28 +3,21 @@
     <div class="content bg-dark">
         <div class="page-inner">
             @if(session('message'))
-            <div class="alert alert-success mb-2">{{session('message')}}</div>
+            <div class="alert alert-success mb-2" style="color: black;">{{ session('message') }}</div>
             @endif
-            @if(session('message'))
-            <div class="alert alert-success mb-2">{{session('message')}}</div>
-            @endif
+
             @if(session('status'))
-            <div class="alert alert-success mb-2">{{session('message')}}</div>
+            <div class="alert alert-success mb-2" style="color: black;">{{ session('status') }}</div>
             @endif
-            @if(session('status'))
-            <div class="alert alert-success mb-2">{{session('message')}}</div>
-            @endif
+
             @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
+            <div class="alert alert-danger mb-2" style="color: black;">{{ session('error') }}</div>
             @endif
 
             @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
+            <div class="alert alert-success mb-2" style="color: black;">{{ session('success') }}</div>
             @endif
+
             <div>
             </div>
             <div>
