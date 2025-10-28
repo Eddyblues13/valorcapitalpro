@@ -14,12 +14,12 @@ class SendUserEmail extends Mailable
     use Queueable, SerializesModels;
 
     public $subject;
-    public $messageBody;
+    public $data;
 
-    public function __construct($subject, $messageBody)
+    public function __construct($subject, $data)
     {
         $this->subject = $subject;
-        $this->messageBody = $messageBody;
+        $this->data = $data;
     }
 
     /**
@@ -40,7 +40,7 @@ class SendUserEmail extends Mailable
         return new Content(
             view: 'emails.user',
             with: [
-                'messageBody' => $this->messageBody,
+                'data' => $this->data,
             ]
         );
     }

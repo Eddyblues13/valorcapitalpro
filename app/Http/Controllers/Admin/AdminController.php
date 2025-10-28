@@ -324,7 +324,7 @@ class AdminController extends Controller
         $subject = $request->subject;
 
         // Send the email using the SendUserEmail mailable
-        Mail::to($request->email)->send(new SendUserEmail($data, $subject));
+        Mail::to($request->email)->send(new SendUserEmail($subject, $data));
 
         // Redirect back with a success message
         return back()->with('status', 'Email successfully sent!');
@@ -779,7 +779,7 @@ class AdminController extends Controller
         }
 
         return redirect()->back()->with('error', 'User not found.');
-    } 
+    }
 
 
     public function addTradePage()
