@@ -64,7 +64,7 @@
         </div>
         <div class="content">
             <p>{{ $subject }},</p>
-            <p>{!! nl2br(e($data)) !!}</p>
+            {!! nl2br(e($data)) !!}
             <p>Best Regards,</p>
             <p><strong>Valor Capital Pro</strong></p>
         </div>
