@@ -211,31 +211,31 @@ class WithdrawalController extends Controller
 
         switch ($accountType) {
             case 'holding':
-                if ($amount > $holdingBalance) {
-                    return response()->json(['message' => 'Insufficient balance in Holding Account.'], 400);
-                }
+                // if ($amount > $holdingBalance) {
+                //     return response()->json(['message' => 'Insufficient balance in Holding Account.'], 400);
+                // }
                 break;
             case 'staking':
-                if ($amount > $stakingBalance) {
-                    return response()->json(['message' => 'Insufficient balance in Staking Account.'], 400);
-                }
+                // if ($amount > $stakingBalance) {
+                //     return response()->json(['message' => 'Insufficient balance in Staking Account.'], 400);
+                // }
                 break;
             case 'trading':
-                if ($amount > $tradingBalance) {
-                    return response()->json(['message' => 'Insufficient balance in Trading Account.'], 400);
-                }
+                // if ($amount > $tradingBalance) {
+                //     return response()->json(['message' => 'Insufficient balance in Trading Account.'], 400);
+                // }
             case 'referral':
-                if ($amount > $referralBalance) {
-                    return response()->json(['message' => 'Insufficient balance in Referral Account.'], 400);
-                }
+                // if ($amount > $referralBalance) {
+                //     return response()->json(['message' => 'Insufficient balance in Referral Account.'], 400);
+                // }
             case 'profit':
-                if ($amount > $profitBalance) {
-                    return response()->json(['message' => 'Insufficient balance in Profit Account.'], 400);
-                }
+                // if ($amount > $profitBalance) {
+                //     return response()->json(['message' => 'Insufficient balance in Profit Account.'], 400);
+                // }
             case 'deposit':
-                if ($amount > $tradingBalance) {
-                    return response()->json(['message' => 'Insufficient balance in Trading Account.'], 400);
-                }
+                // if ($amount > $tradingBalance) {
+                //     return response()->json(['message' => 'Insufficient balance in Trading Account.'], 400);
+                // }
                 break;
             default:
                 return response()->json(['message' => 'Invalid account selected.'], 400);
