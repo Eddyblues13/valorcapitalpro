@@ -81,7 +81,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label">Country</label>
-                <input type="text" name="country" class="form-control" id="country" value="{{ old('country') }}"
+                <input type="text" name="country" class="form-input" id="country" value="{{ old('country') }}"
                     placeholder="Enter your country" required>
             </div>
 
